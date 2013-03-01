@@ -76,9 +76,9 @@ val sigma = 0.01
     def G(  rho0:Double, sigma:Double) = p*h1(rho0 : Double, sigma : Double) + d*h2(rho0 : Double, sigma : Double)
      
     def A(rho0:Double)= trapezoidal( phi => rho0*G( rho0, sigma ), -pi, pi, 200)     
-   
-  
-  println(A(1))
+     assertEquals(A(10),10,0.1)    //When SNR is large, we expect A(rho0) and rho0 are very similar
+     assertEquals(A(20),20,0.1)
+    
   
   
   }
