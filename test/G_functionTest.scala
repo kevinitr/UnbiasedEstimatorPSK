@@ -21,8 +21,7 @@ class G_functionTest {
   final def cub(x : Double) = x*x*x
   final def sqrt(x : Double) = scala.math.sqrt(x) 
   final def exp(x : Double) = scala.math.exp(x)
-  final def erf(x : Double) = pubsim.Util.erf(x)
-  
+  final def erf(x : Double) = pubsim.Util.erf(x) 
   /**  @Before
   def setUp: Unit = {
   }  **/
@@ -54,11 +53,11 @@ class G_functionTest {
     def h2(  rho0:Double, sigma:Double) = trapezoidal  ( phi => cos(fracpart(0 + phi))*g(phi,rho0 : Double, sigma : Double), -pi, pi, 200 )
     def G(  rho0:Double, sigma:Double) = p*h1(rho0 : Double, sigma : Double) + d*h2(rho0 : Double, sigma : Double)  
     
-  var G1=G(1,1)
-  var G2=G(10,10)
-  
-  assertEquals(G1,G2)
-  println("G_functionTest ");
+  assertEquals(G(1,1),G(10,10),0.001)   
+  println("G_function" +"\t"+G(1,1) +"\t" + G(10,10)); 
+     
+  assertEquals(G(5,3),G(10,6),0.001)   
+  println("G_function" +"\t"+G(5,5) +"\t" + G(5,5));
     
   }
 }
