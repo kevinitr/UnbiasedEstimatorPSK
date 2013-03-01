@@ -42,10 +42,7 @@ class UnbiasedEstimator  {
     val rhohat= 0.0
     // define the f(x) function here
     val A = (x: Double) =>  x*x - 3*x -3  
-    // pass the f(x) function as a parameter to the Bisection function
-
-    
-    
+    // pass the f(x) function as a parameter to the Bisection function 
    
   }
 
@@ -68,8 +65,6 @@ class UnbiasedEstimator  {
    val noises = SNRs.map( snr => new ComplexGaussian(a0.mag2/snr/2.0) ) 
    val sigma = SNRs.map( snr => sqrt(a0.mag2/snr/2.0) )    
  
-
-
     assertEquals(   )
     assertTrue(err < 0.01)
 
@@ -90,9 +85,7 @@ class UnbiasedEstimator  {
   return bb    
     } 
 val a0 = new PolarComplex(8,2*scala.math.Pi*(new scala.util.Random).nextDouble) 
-
-    
-    
+  
   def fracpart(x : Double) = x - 2*pi/M*scala.math.round(M*x/2/pi) 
 
   def g(phi : Double, rho0 : Double, sigma : Double) : Double = { 
